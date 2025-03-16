@@ -296,9 +296,6 @@ def getEmpByDept():
     left['label'] = kmeans.labels_
     print(left)
 
-    # Cluster 0 → “Winners” (High performers who left)
-    # Cluster 1 → “Frustrated” (Unhappy employees who left)
-    # Cluster 2 → “Bad match” (Employees who weren’t suited for the job)
     winners_hours_std = np.std(left.average_montly_hours[left.label == 1])# Employees who left but were high performers
     frustrated_hours_std = np.std(left.average_montly_hours[left.label == 2])# Employees who left due to dissatisfaction
     bad_match_hours_std = np.std(left.average_montly_hours[left.label == 0])# Employees who were not suited for the job
